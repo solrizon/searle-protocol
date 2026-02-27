@@ -1,0 +1,22 @@
+<svg width="180" height="180" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+  <!-- 盾形背景 -->
+  <path d="
+    M 90,4
+    C 90,4 160,4 160,4
+    C 164,4 168,8 168,12
+    L 168,95
+    C 168,130 135,158 90,176
+    C 45,158 12,130 12,95
+    L 12,12
+    C 12,8 16,4 20,4
+    Z
+  " fill="#020408"/>
+  <!-- 背景菱形纹理 -->
+  <path d="M90 20 L155 90 L90 160 L25 90 Z" fill="none" stroke="#1E293B" stroke-width="1"/>
+  <path d="M90 42 L138 90 L90 138 L42 90 Z" fill="none" stroke="#1E293B" stroke-width="0.5"/>
+  <!-- S 主体 -->
+  <path d="
+    M 124,46 L 60,46 L 46,60 L 46,78 L 60,90
+    L 120,90 L 134,104 L 134,122 L 120,136 L 56,136
+  " fill="none" stroke="#F1F5F9" stroke-width="14" stroke-linecap="square" stroke-linejoin="miter"/>
+</svg>

@@ -1,0 +1,246 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://searleprotocol.org/schema/license-v1.0.json",
+  "title": "Searle Protocol License Metadata",
+  "description": "Machine-readable metadata for works licensed under the Searle Protocol License v1.0. The permissions fields MUST be consistent with the declared license variant. This schema enforces consistency via allOf/if-then rules.",
+  "type": "object",
+  "required": ["license", "version", "permissions"],
+  "properties": {
+    "license": {
+      "type": "string",
+      "enum": [
+        "Searle-OS-1.0",
+        "Searle-NT-1.0",
+        "Searle-NT-OW-1.0",
+        "Searle-NR-1.0",
+        "Searle-NC-NT-1.0",
+        "Searle-NC-NT-OW-1.0",
+        "Searle-NC-NR-1.0",
+        "Searle-FP-1.0"
+      ],
+      "description": "SPDX-style license identifier (base variant, without suffixes)"
+    },
+    "version": {
+      "type": "string",
+      "const": "1.0",
+      "description": "Searle Protocol License version"
+    },
+    "suffixes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["OCA", "WM"]
+      },
+      "uniqueItems": true,
+      "maxItems": 2,
+      "description": "Optional suffixes. OCA = On-Chain Attribution, WM = Watermarked. When constructing a full display identifier, insert suffixes BEFORE the version number: e.g., base 'Searle-NT-1.0' + suffixes ['OCA','WM'] = 'Searle-NT-OCA-WM-1.0'. The 'license' field always uses the base identifier without suffixes."
+    },
+    "creator": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "address": {
+          "type": "string",
+          "pattern": "^0x[a-fA-F0-9]{40}$",
+          "description": "Ethereum/EVM wallet address"
+        },
+        "verified": { "type": "boolean" },
+        "jurisdiction": {
+          "type": "string",
+          "pattern": "^[A-Z]{2}$",
+          "description": "ISO 3166-1 alpha-2 country code of the Creator's jurisdiction. Used for governing law determination per Article 10.1.1(a). SHOULD be provided for anonymous/pseudonymous creators; if omitted, fallback rules in Article 10.1.1(b)-(c) apply."
+        }
+      }
+    },
+    "permissions": {
+      "type": "object",
+      "properties": {
+        "humanUse": { "type": "boolean" },
+        "commercialUse": { "type": "boolean" },
+        "modification": { "type": "boolean" },
+        "redistribution": { "type": "boolean" },
+        "aiTraining": { "type": "boolean" },
+        "aiInference": {
+          "type": "string",
+          "enum": ["allowed", "open-weight-only", "disallowed"],
+          "description": "Primary field controlling AI inference permissions. 'allowed' = any model, 'open-weight-only' = open-weight models only, 'disallowed' = no AI access."
+        },
+        "aiModelScope": {
+          "type": "string",
+          "enum": ["all", "open-weight", "none"],
+          "description": "DEPRECATED in favor of aiInference. Retained for backward compatibility. If both are present, aiInference takes precedence. Mapping: allowed=all, open-weight-only=open-weight, disallowed=none."
+        },
+        "academicResearch": { "type": "boolean" }
+      },
+      "required": ["aiTraining", "aiInference"]
+    },
+    "onChain": {
+      "type": "object",
+      "properties": {
+        "chain": {
+          "type": "string",
+          "enum": ["base", "ethereum", "solana", "none"]
+        },
+        "contract": {
+          "type": "string",
+          "description": "Contract or program address. EVM chains: 0x-prefixed 40-hex-char address. Solana: Base58-encoded program ID (32-44 Base58 characters). Format is enforced per chain via allOf if/then rules."
+        },
+        "assetId": { "type": "integer", "minimum": 0 },
+        "contentHash": {
+          "type": "string",
+          "pattern": "^0x[a-fA-F0-9]{64}$",
+          "description": "Keccak-256 hash of the Work content, 0x-prefixed 32-byte hex string"
+        },
+        "registeredAt": { "type": "string", "format": "date-time" }
+      }
+    },
+    "watermark": {
+      "type": "object",
+      "properties": {
+        "enabled": { "type": "boolean" },
+        "type": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["dynamic", "steganographic", "metadata"]
+          }
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": { "license": { "enum": ["Searle-NC-NT-1.0", "Searle-NC-NT-OW-1.0", "Searle-NC-NR-1.0"] } },
+        "required": ["license"]
+      },
+      "then": {
+        "properties": {
+          "permissions": {
+            "properties": {
+              "commercialUse": { "const": false }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": { "license": { "enum": ["Searle-NR-1.0", "Searle-NC-NR-1.0"] } },
+        "required": ["license"]
+      },
+      "then": {
+        "properties": {
+          "permissions": {
+            "properties": {
+              "aiInference": { "const": "disallowed" },
+              "aiTraining": { "const": false }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": { "license": { "enum": ["Searle-NT-OW-1.0", "Searle-NC-NT-OW-1.0"] } },
+        "required": ["license"]
+      },
+      "then": {
+        "properties": {
+          "permissions": {
+            "properties": {
+              "aiInference": { "const": "open-weight-only" },
+              "aiTraining": { "const": false }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": { "license": { "const": "Searle-OS-1.0" } },
+        "required": ["license"]
+      },
+      "then": {
+        "properties": {
+          "permissions": {
+            "properties": {
+              "aiTraining": { "const": true },
+              "aiInference": { "const": "allowed" }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": { "license": { "enum": ["Searle-NT-1.0", "Searle-NC-NT-1.0"] } },
+        "required": ["license"]
+      },
+      "then": {
+        "properties": {
+          "permissions": {
+            "properties": {
+              "aiTraining": { "const": false },
+              "aiInference": { "const": "allowed" }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": { "license": { "const": "Searle-FP-1.0" } },
+        "required": ["license"]
+      },
+      "then": {
+        "properties": {
+          "permissions": {
+            "properties": {
+              "aiTraining": { "const": false }
+            }
+          },
+          "onChain": {
+            "required": ["chain", "contract", "contentHash"],
+            "properties": {
+              "chain": {
+                "enum": ["base", "ethereum", "solana"]
+              }
+            }
+          }
+        },
+        "required": ["onChain"]
+      }
+    },
+    {
+      "if": {
+        "properties": { "onChain": { "properties": { "chain": { "enum": ["base", "ethereum"] } }, "required": ["chain"] } },
+        "required": ["onChain"]
+      },
+      "then": {
+        "properties": {
+          "onChain": {
+            "properties": {
+              "contract": { "pattern": "^0x[a-fA-F0-9]{40}$" }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": { "onChain": { "properties": { "chain": { "const": "solana" } }, "required": ["chain"] } },
+        "required": ["onChain"]
+      },
+      "then": {
+        "properties": {
+          "onChain": {
+            "properties": {
+              "contract": { "pattern": "^[1-9A-HJ-NP-Za-km-z]{32,44}$" }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

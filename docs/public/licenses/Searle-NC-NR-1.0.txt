@@ -1,0 +1,32 @@
+Searle Protocol License v1.0 — Non-Commercial, No Reading (Searle-NC-NR)
+
+Copyright (c) [YEAR] [COPYRIGHT HOLDER]
+
+Permission is hereby granted, free of charge, to any person obtaining a
+copy of this work ("the Work"), to use, copy, modify, and distribute the
+Work for NON-COMMERCIAL, HUMAN-ONLY PURPOSES, subject to the following
+conditions:
+
+1. The above copyright notice and this permission notice shall be included
+   in all copies or substantial portions of the Work.
+
+2. COMMERCIAL USE: PROHIBITED without separate written permission.
+
+3. AI TRAINING: PROHIBITED.
+
+4. AI INFERENCE: PROHIBITED. No AI model may process this Work in any
+   capacity. The Work may not be included in any AI-accessible index,
+   database, or retrieval system.
+
+5. SUBLICENSE AI RESTRICTIONS: Any sublicense granted by the Recipient
+   MUST include the AI Training and AI Inference prohibitions of clauses
+   3 and 4 above. A sublicense that permits AI access to the Work, or
+   that fails to prohibit AI access, is void and constitutes a material
+   breach of this license.
+
+THE WORK IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED. IN NO EVENT SHALL THE COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM,
+DAMAGES, OR OTHER LIABILITY ARISING FROM THE WORK.
+
+Full license: https://searleprotocol.org/license/v1.0
+SPDX-License-Identifier: Searle-NC-NR-1.0

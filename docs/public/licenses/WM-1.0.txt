@@ -1,0 +1,30 @@
+Watermark Addendum (-WM) — Searle Protocol License v1.0
+
+This addendum applies when the -WM suffix is appended to any Searle
+Protocol License variant (e.g., Searle-NT-WM-1.0).
+
+1. WATERMARK NOTICE. Distributed copies of this Work contain visible,
+   invisible, steganographic, or metadata-based watermarks that uniquely
+   identify the Recipient, distribution timestamp, or distribution channel.
+
+2. PROHIBITED ACTIONS. The Recipient SHALL NOT:
+   (a) Remove, alter, obscure, or attempt to reverse-engineer any watermark;
+   (b) Distribute de-watermarked copies of the Work;
+   (c) Use technical means to circumvent watermark detection.
+
+3. EVIDENTIARY VALUE. Watermark detection constitutes admissible evidence
+   that a specific copy of the Work was distributed to a specific Recipient.
+   See Article 5 of the full license text.
+
+4. CONSEQUENCES OF VIOLATION. Unauthorized removal or circumvention of
+   watermarks may trigger:
+   (a) License termination under Article 8;
+   (b) On-chain penalty proceedings, if applicable;
+   (c) Civil liability under applicable copyright law.
+
+5. NO NEGATIVE INFERENCE. The absence of a detectable watermark does not
+   imply the absence of restrictions. All license terms apply regardless.
+
+This addendum does not modify any other terms of the base license variant.
+
+Full license: https://searleprotocol.org/license/v1.0

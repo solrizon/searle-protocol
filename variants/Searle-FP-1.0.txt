@@ -1,0 +1,37 @@
+Searle Protocol License v1.0 — Full Protection (Searle-FP)
+
+Copyright (c) [YEAR] [COPYRIGHT HOLDER]
+
+This work ("the Work") is licensed under the Searle Protocol License v1.0,
+Full Protection variant.
+
+1. ON-CHAIN ATTRIBUTION REQUIRED. This Work MUST be registered on a public
+   blockchain via the Searle Protocol smart contracts before distribution.
+   The on-chain record constitutes the authoritative proof of authorship.
+
+2. AI TRAINING: PROHIBITED without explicit written consent.
+
+3. AI INFERENCE: Subject to platform terms of service. The platform
+   operator determines which models may access the Work and may require
+   per-invocation payment. Default: open-weight models only.
+
+4. HUMAN USE: Subject to the accompanying commercial license agreement or
+   platform terms of service. In the absence of such agreement, only
+   personal, non-commercial, non-redistributable use is permitted. The
+   Recipient may not sublicense, sell, or publicly distribute the Work
+   without a separate written agreement from the Creator or platform
+   operator. This clause mirrors Article 2.1(c) of the full license text.
+
+5. WATERMARKS: Distributed copies may contain visible or invisible
+   watermarks. Removal, alteration, or circumvention of watermarks is
+   prohibited and constitutes a material breach of this license.
+
+6. ECONOMIC ENFORCEMENT: Violations may trigger on-chain penalty
+   mechanisms (staking forfeiture) as defined in the Searle Protocol
+   smart contracts, in addition to legal remedies under applicable law.
+
+THE WORK IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.
+
+Full license: https://searleprotocol.org/license/v1.0
+On-chain: [CHAIN:CONTRACT_ADDRESS:ASSET_ID]
+SPDX-License-Identifier: Searle-FP-1.0

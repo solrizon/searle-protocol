@@ -1,0 +1,45 @@
+Searle Protocol License v1.0 — No Training, Open Weight (Searle-NT-OW)
+
+Copyright (c) [YEAR] [COPYRIGHT HOLDER]
+
+Permission is hereby granted, free of charge, to any person obtaining a
+copy of this work ("the Work"), to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Work, and to permit
+persons to whom the Work is furnished to do so, subject to the following
+conditions:
+
+1. The above copyright notice and this permission notice shall be included
+   in all copies or substantial portions of the Work.
+
+2. AI TRAINING: PROHIBITED. The Work SHALL NOT be used, in whole or in
+   part, as training data for machine learning models, large language
+   models, or any automated learning systems without explicit written
+   consent from the copyright holder.
+
+3. AI INFERENCE: OPEN-WEIGHT MODELS ONLY. The Work may be processed at
+   runtime ONLY by AI models whose trained weights are publicly available
+   for download, inspection, and local execution ("Open-Weight Models").
+
+   Processing by proprietary API-only models (e.g., models accessible
+   only through hosted services where weights are not downloadable) is
+   PROHIBITED without explicit written consent from the copyright holder.
+
+   The rationale: open-weight models can be audited to verify they do not
+   retain or retrain on the Work; closed-weight models cannot.
+
+4. SUBLICENSE AI RESTRICTIONS: Any sublicense granted by the Recipient
+   MUST preserve the Open-Weight-Only restriction of clause 3 above. A
+   sublicense that permits processing by proprietary API-only models, or
+   that fails to restrict AI inference to Open-Weight Models, is void and
+   constitutes a material breach of this license.
+
+5. ACADEMIC RESEARCH EXCEPTION: Academic research institutions may use the
+   Work for AI Training under the conditions specified in Article 3.4 of
+   the full license text.
+
+THE WORK IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED. IN NO EVENT SHALL THE COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM,
+DAMAGES, OR OTHER LIABILITY ARISING FROM THE WORK.
+
+Full license: https://searleprotocol.org/license/v1.0
+SPDX-License-Identifier: Searle-NT-OW-1.0

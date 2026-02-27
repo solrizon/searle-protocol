@@ -1,0 +1,28 @@
+On-Chain Attribution Addendum (-OCA) — Searle Protocol License v1.0
+
+This addendum applies when the -OCA suffix is appended to any Searle
+Protocol License variant (e.g., Searle-NT-OCA-1.0).
+
+1. ON-CHAIN REGISTRATION. The Creator has registered this Work on a public
+   blockchain via the Searle Protocol smart contracts or a compatible
+   attribution registry. The on-chain record includes:
+   - Content hash of the Work
+   - Creator's blockchain address
+   - Registration timestamp
+   - License variant identifier
+
+2. EVIDENTIARY VALUE. The on-chain record serves as supplementary evidence
+   of authorship and licensing terms. In case of disputes, the earliest
+   on-chain record with a matching content hash is considered prima facie
+   evidence of prior creation. See Article 4.3 of the full license text.
+
+3. ATTRIBUTION REFERENCE. Distributed copies of the Work SHOULD include
+   or reference the on-chain attribution identifier in the format:
+   [CHAIN:CONTRACT_ADDRESS:ASSET_ID]
+
+4. INTEGRITY. Tampering with, removing, or falsifying on-chain attribution
+   records constitutes a material breach of the underlying license.
+
+This addendum does not modify any other terms of the base license variant.
+
+Full license: https://searleprotocol.org/license/v1.0

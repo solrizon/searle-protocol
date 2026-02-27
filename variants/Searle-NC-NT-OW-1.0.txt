@@ -1,0 +1,36 @@
+Searle Protocol License v1.0 — Non-Commercial, No Training, Open Weight (Searle-NC-NT-OW)
+
+Copyright (c) [YEAR] [COPYRIGHT HOLDER]
+
+Permission is hereby granted, free of charge, to any person obtaining a
+copy of this work ("the Work"), to use, copy, modify, and distribute the
+Work for NON-COMMERCIAL PURPOSES ONLY, subject to the following conditions:
+
+1. The above copyright notice and this permission notice shall be included
+   in all copies or substantial portions of the Work.
+
+2. COMMERCIAL USE: PROHIBITED without separate written permission.
+
+3. AI TRAINING: PROHIBITED. The Work SHALL NOT be used as training data
+   for any machine learning system.
+
+4. AI INFERENCE: OPEN-WEIGHT MODELS ONLY. The Work may be processed at
+   runtime ONLY by AI models whose trained weights are publicly available
+   for download, inspection, and local execution. Processing by proprietary
+   API-only models is PROHIBITED. All inference use remains subject to the
+   non-commercial restriction in clause 2 above (see also Article 2.1(b)
+   and Article 3.3(b) of the full license text).
+
+5. SUBLICENSE AI RESTRICTIONS: Any sublicense granted by the Recipient
+   MUST preserve the Open-Weight-Only restriction of clause 4 above and
+   the non-commercial restriction of clause 2. A sublicense that permits
+   processing by proprietary API-only models, or that fails to restrict
+   AI inference to Open-Weight Models, is void and constitutes a material
+   breach of this license.
+
+THE WORK IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED. IN NO EVENT SHALL THE COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM,
+DAMAGES, OR OTHER LIABILITY ARISING FROM THE WORK.
+
+Full license: https://searleprotocol.org/license/v1.0
+SPDX-License-Identifier: Searle-NC-NT-OW-1.0
