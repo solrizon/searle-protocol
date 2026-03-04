@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import { ArrowDown } from "lucide-react"
 import { Reveal } from "./reveal"
 
@@ -92,6 +93,17 @@ export function HeroSection() {
           >
             READ THE MANIFESTO
           </button>
+          <Link
+            href="/license/v1.0"
+            className="px-8 py-4 font-bold font-mono text-center transition-colors hover:bg-white/5 no-underline"
+            style={{
+              backgroundColor: "transparent",
+              color: "var(--text-muted)",
+              border: "1px solid var(--border-dim)",
+            }}
+          >
+            FULL SPECIFICATION ↗
+          </Link>
         </Reveal>
       </div>
 

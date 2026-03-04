@@ -68,6 +68,13 @@ export function Footer() {
             LEGAL
           </span>
           <Link
+            href="/license/v1.0"
+            className="block mb-2 hover:text-white transition-colors no-underline"
+            style={{ color: "var(--text-muted)" }}
+          >
+            Full License v1.0
+          </Link>
+          <Link
             href="/terms"
             className="block mb-2 hover:text-white transition-colors no-underline"
             style={{ color: "var(--text-muted)" }}

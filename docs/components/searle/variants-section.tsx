@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import { useState, type ReactNode } from "react"
 import {
   Globe,
@@ -224,6 +225,27 @@ export function VariantsSection({ recommendation, onCopy, onView }: VariantsSect
           )
         })}
       </div>
+      <Reveal variant="fade" delay={0.2} duration={0.6}>
+        <div
+          className="flex items-center justify-between px-8 py-5"
+          style={{ borderTop: "1px solid var(--border-dim)" }}
+        >
+          <span className="font-mono text-xs" style={{ color: "var(--text-muted)" }}>
+            SEARLE PROTOCOL LICENSE v1.0 — 11 ARTICLES
+          </span>
+          <Link
+            href="/license/v1.0"
+            className="font-mono text-xs uppercase no-underline flex items-center gap-2 hover:text-white transition-colors"
+            style={{
+              color: "var(--text-muted)",
+              border: "1px solid var(--border-dim)",
+              padding: "8px 16px",
+            }}
+          >
+            READ FULL SPECIFICATION ↗
+          </Link>
+        </div>
+      </Reveal>
     </section>
   )
 }
